@@ -780,7 +780,7 @@ a {
 }
 .article {
   margin: 30px 40px 30px 40px;
-  padding: 30px 75px 30px 40px;
+  padding: 30px 40px 30px 40px;
   position: relative;
   border-bottom: 1px solid #ddd;
   background: #fff;
@@ -834,7 +834,6 @@ a {
 }
 .article-entry {
   line-height: 2;
-  padding-right: 93px;
 }
 .article-entry p {
   margin-top: 10px;
@@ -949,7 +948,7 @@ a {
   right: 0;
   top: 0;
   height: 100%;
-  text-align: center;
+  text-align: right;
 }
 .article-meta .article-date {
   font-size: 20px;
