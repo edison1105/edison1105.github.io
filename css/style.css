@@ -137,7 +137,7 @@ body,
   height: 100%;
 }
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "微软雅黑";
   font-weight: 300;
   font-size: 14px;
   background: #fff;
@@ -400,7 +400,6 @@ a {
   padding: 20% 0% 0% 15%;
 }
 #header a {
-  font-family: Roboto, "Roboto", serif;
   color: #444;
 }
 #header a:hover {
