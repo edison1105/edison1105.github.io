@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://edison1105.github.io/"/>
-  <updated>2015-01-25T11:25:40.190Z</updated>
+  <updated>2015-01-27T13:04:06.907Z</updated>
   <id>http://edison1105.github.io/</id>
   
   <author>
@@ -13,6 +13,91 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Mac OS 下搭建Hexo博客环境]]></title>
+    <link href="http://edison1105.github.io/2015/01/27/Mac-OS-install-Hexo/"/>
+    <id>http://edison1105.github.io/2015/01/27/Mac-OS-install-Hexo/</id>
+    <published>2015-01-27T11:18:45.000Z</published>
+    <updated>2015-01-27T13:03:49.000Z</updated>
+    <content type="html"><![CDATA[<p>搭建步骤如下</p>
+<ol>
+<li>注册GitHub账户</li>
+<li>创建仓库</li>
+<li>安装nodejs</li>
+<li>安装git</li>
+<li>安装Hexo</li>
+<li>相关配置</li>
+</ol>
+<h3 id="1-注册GitHub账户">1.注册GitHub账户</h3>
+<ol>
+<li>如果你已经拥有了GitHub账户，请跳过次步骤。</li>
+<li>打开 <a href="https://github.com" target="_blank" rel="external">https://github.com</a> 点击 [<strong>Sign up for GitHub</strong>]按钮。注册成功后请牢记您的用户用和密码</li>
+<li>登陆GitHub。</li>
+</ol>
+<h3 id="2-创建仓库">2.创建仓库</h3>
+<ol>
+<li>登陆GitHub之后点击 [<strong> + New repository </strong>]按钮新建一个仓库，用来存储博客内容，这里Repository name 填写 [你的登陆名].github.io 不能用别的名字。比如，你的登陆名是 <strong>edison</strong> 那么这个仓库的名字必须是 <strong>edison</strong>.github.io。如下图<br><img src="/images/create.png" alt="create"></li>
+<li>填写完信息之后，点击[<strong>Create repository</strong>]按钮，完成创建</li>
+</ol>
+<h3 id="3-安装nodejs">3.安装nodejs</h3>
+<ol>
+<li>因为Hexo是基于nodejs的，所以必须安装nodejs。</li>
+<li>安装方式有好多种，这里不再一一赘述.</li>
+<li>打开连接 <a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a> 我们会看到 <strong> Mac OS X Installer(.pkg) </strong>这一项，点击后面的连接 <strong>Universal</strong>下载安装文件。如下图<br><img src="/images/download-node.png" alt="download-nodejd"></li>
+<li>下载完成之后点击直接安装即可。</li>
+<li>安装完成后，打开终端，输入下面的命令<br> <code>$ node -v</code><br> 如果nodejs安装成功的化，你会看到命令行显示出nodejs的版本</li>
+</ol>
+<h3 id="4-安装git">4.安装git</h3>
+<ol>
+<li>安装方式有好多，这里也不再一一赘述</li>
+<li>如果你已经安装了XCode，就不需要安装git了，如果没有安装Xcode,需要下载并安装</li>
+<li>打开 <a href="http://git-scm.com/download/mac" target="_blank" rel="external">http://git-scm.com/download/mac</a> 下载git,并安装。</li>
+</ol>
+<h3 id="5-安装Hexo">5.安装Hexo</h3>
+<ol>
+<li>在电脑中任意位置创建一个文件夹,用来存放博客文件。如：<code>/Users/edison/Desktop/Blog</code></li>
+<li>打开终端，输入<code>npm install -g hexo</code> 如果有权限问题，请尝试<code>sudo npm install -g hexo</code>。<strong>npm是nodejs的包管理工具</strong></li>
+<li>npm会下载hexo。</li>
+<li>初始化hexo 进入步骤1中创建的目录，如：<code>cd /Users/edison/Desktop/Blog</code> </li>
+<li>输入<code>hexo init</code></li>
+<li>输入<code>npm install</code></li>
+<li>输入<code>hexo generate</code></li>
+<li>输入<code>hexo server</code> 会看到提示信息 <code>Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code> 这表示已经博客已经搭建好了。我们在浏览器中打开 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 查看了</li>
+</ol>
+<h3 id="6-相关配置">6.相关配置</h3>
+<ol>
+<li><p>以上所有步骤结束之后，我们打开<code>/Users/edison/Desktop/Blog</code>目录，会发现多了好多文件，打开_config.yml,更改相关的配置信息。参考：<a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="external">http://zipperary.com/2013/05/29/hexo-guide-3/</a></p>
+</li>
+<li><p>在文件的最后找到，deploy配置项，修改为</p>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">    <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span></div><div class="line">    repository: https:<span class="comment">//github.com/edison1105/edison1105.github.io.git</span></div><div class="line">    branch: master</div></pre></td></tr></table></figure>
+
+<p>repository：是你在github上创建的仓库的git地址。请根据实际情况更改。<br>保存文件</p>
+<ol>
+<li><p>终端里输入<br><code>hexo generate</code> 回车<br><code>hexo deploy</code>   回车，该命令会将 bolg相关内容上传到我们之前创建的github仓库中。过程中可能会让你输入github的账户名和密码</p>
+</li>
+<li><p>更改主题<br>什么？你很喜欢本博客的主题。那好吧<br><a href="http://litten.github.io/2014/08/31/hexo-theme-yilia/" target="_blank" rel="external">http://litten.github.io/2014/08/31/hexo-theme-yilia/</a><br>这个是教程</p>
+</li>
+<li><p>扩展阅读<br>1.hexo主题列表：<a href="https://github.com/tommy351/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/tommy351/hexo/wiki/Themes</a><br>2.hexo官网：<a href="http://hexo.io" target="_blank" rel="external">http://hexo.io</a><br>3.markdown使用：<a href="http://www.markdown.cn" target="_blank" rel="external">http://www.markdown.cn</a><br>4.参考博客：<a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">http://ibruce.info/2013/11/22/hexo-your-blog/</a></p>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>搭建步骤如下</p>
+<ol>
+<li>注册GitHub账户</li>
+<li>创建仓库</li>
+<li>安装nodejs</li>
+<li>安装git</li>
+<li>安装Hexo</li>
+<li>相关配置</li>
+</ol>
+<h3 id="1-注册GitHub]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[代码高亮测试]]></title>
