@@ -48,7 +48,6 @@ var Instagram = (function(){
 			var arr = str.split("/");
 			return url+arr[arr.length-1];
 		}
-		
 	}
 
 	var ctrler = function(data){
@@ -59,10 +58,7 @@ var Instagram = (function(){
 			var m = d.getMonth()+1;
 			var src = replacer(data[i].images.low_resolution.url);
 			var bigSrc = replacer(data[i].images.standard_resolution.url);
-			var text = "";
-			if(data[i].caption && data[i].caption.text){
-				text = data[i].caption.text;
-			}
+			var text = data[i].caption.text;
 			var key = y+"-"+m;
 			if(imgObj[key]){
 				imgObj[key].srclist.push(src);
@@ -72,7 +68,7 @@ var Instagram = (function(){
 				imgObj[key] = {
 					year:y,
 					month:m,
-					srclist:[src],
+					srclist:[bigSrc],
 					bigSrclist:[bigSrc],
 					text:[text]
 				}
@@ -125,18 +121,12 @@ var Instagram = (function(){
 		init:function(){
 			//getList("https://api.instagram.com/v1/users/438522285/media/recent/?access_token=438522285.2082eef.ead70f432f444a2e8b1b341617637bf6&count=100");
 			var insid = $(".instagram").attr("data-client-id");
-			var userid = $(".instagram").attr("data-user-id");
 			if(!insid){
 				alert("Didn't set your instagram client_id.\nPlease see the info on the console of your brower.");
 				console.log("Please open 'http://instagram.com/developer/clients/manage/' to get your client-id.");
 				return;
 			}
-			if(!userid){
-				alert("Didn't set your instagram userid.\nPlease see the info on the console of your brower.");
-				console.log("Please open 'http://jelled.com/instagram/lookup-user-id' to get your userid.");
-				return;
-			}
-			getList("https://api.instagram.com/v1/users/"+userid+"/media/recent/?client_id="+insid+"&count=100");
+			getList("https://api.instagram.com/v1/users/438522285/media/recent/?client_id="+insid+"&count=100");
 			bind();
 		}
 	}

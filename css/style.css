@@ -1869,10 +1869,10 @@ pre .javascript .function {
   border-right-color: #ff964b;
 }
 .tagcloud a.color5 {
-  background: #ed5cdb;
+  background: #444;
 }
 .tagcloud a.color5:before {
-  border-right-color: #ed5cdb;
+  border-right-color: #444;
 }
 .article-tag-list .article-tag-list-item {
   float: left;
