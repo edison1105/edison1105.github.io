@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://edison1105.github.io/"/>
-  <updated>2015-01-27T13:07:24.503Z</updated>
+  <updated>2015-03-21T03:03:51.668Z</updated>
   <id>http://edison1105.github.io/</id>
   
   <author>
@@ -16,10 +16,10 @@
   
   <entry>
     <title><![CDATA[Mac OS 下搭建Hexo博客环境]]></title>
-    <link href="http://edison1105.github.io/2015/01/27/Mac-OS-install-Hexo/"/>
-    <id>http://edison1105.github.io/2015/01/27/Mac-OS-install-Hexo/</id>
-    <published>2015-01-27T11:18:45.000Z</published>
-    <updated>2015-01-27T13:03:49.000Z</updated>
+    <link href="http://edison1105.github.io/2015/03/21/Mac-OS-install-Hexo/"/>
+    <id>http://edison1105.github.io/2015/03/21/Mac-OS-install-Hexo/</id>
+    <published>2015-03-21T03:02:08.000Z</published>
+    <updated>2015-03-21T03:02:08.000Z</updated>
     <content type="html"><![CDATA[<p>搭建步骤如下</p>
 <ol>
 <li>注册GitHub账户</li>
@@ -29,6 +29,8 @@
 <li>安装Hexo</li>
 <li>相关配置</li>
 </ol>
+<a id="more"></a>
+
 <h3 id="1-注册GitHub账户">1.注册GitHub账户</h3>
 <ol>
 <li>如果你已经拥有了GitHub账户，请跳过次步骤。</li>
@@ -94,17 +96,20 @@
 <li>安装Hexo</li>
 <li>相关配置</li>
 </ol>
-<h3 id="1-注册GitHub]]>
+]]>
+    
     </summary>
+    
+      <category term="hexo" scheme="http://edison1105.github.io/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[代码高亮测试]]></title>
-    <link href="http://edison1105.github.io/2015/01/25/testpage/"/>
-    <id>http://edison1105.github.io/2015/01/25/testpage/</id>
+    <link href="http://edison1105.github.io/2015/01/25/Code-Hightlight-Test/"/>
+    <id>http://edison1105.github.io/2015/01/25/Code-Hightlight-Test/</id>
     <published>2015-01-25T07:02:08.000Z</published>
-    <updated>2015-01-25T09:30:20.000Z</updated>
+    <updated>2015-03-21T03:03:10.000Z</updated>
     <content type="html"><![CDATA[<h3 id="代码高亮测试">代码高亮测试</h3>
 <figure class="highlight objective-c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *  执行动画</div><div class="line"> *</div><div class="line"> *  @param count      图片数量</div><div class="line"> *  @param actionName 动画类型</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)startAnimate:(<span class="keyword">int</span>)count action:(<span class="built_in">NSString</span> *)actionName {</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">self</span><span class="variable">.tom</span><span class="variable">.isAnimating</span>) <span class="keyword">return</span>;</div><div class="line"></div><div class="line">  <span class="built_in">NSBundle</span> *mainBundle = [<span class="built_in">NSBundle</span> mainBundle];</div><div class="line">  <span class="built_in">NSMutableArray</span> *images = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) {</div><div class="line">    <span class="built_in">NSString</span> *path = [mainBundle</div><div class="line">                      pathForResource:[<span class="built_in">NSString</span> stringWithFormat</div><div class="line">                       :<span class="string">@"%@_%02d"</span>, actionName, i]</div><div class="line">                               ofType:<span class="string">@"jpg"</span>];</div><div class="line"></div><div class="line">    <span class="built_in">UIImage</span> *image = [<span class="built_in">UIImage</span> imageWithContentsOfFile:path];</div><div class="line">    [images addObject:image];</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">self</span><span class="variable">.tom</span><span class="variable">.animationImages</span> = images;</div><div class="line">  <span class="keyword">self</span><span class="variable">.tom</span><span class="variable">.animationDuration</span> = count * <span class="number">0.05</span>;</div><div class="line">  <span class="keyword">self</span><span class="variable">.tom</span><span class="variable">.animationRepeatCount</span> = <span class="number">1</span>;</div><div class="line">  [<span class="keyword">self</span><span class="variable">.tom</span> startAnimating];</div><div class="line"></div><div class="line"></div><div class="line">  [<span class="keyword">self</span><span class="variable">.tom</span> performSelector:<span class="keyword">@selector</span>(setAnimationImages:)</div><div class="line">                 withObject:<span class="literal">nil</span></div><div class="line">                 afterDelay:<span class="keyword">self</span><span class="variable">.tom</span><span class="variable">.animationDuration</span> + <span class="number">1</span>];</div><div class="line">}</div></pre></td></tr></table></figure>
 
@@ -113,6 +118,8 @@
     <![CDATA[<h3 id="代码高亮测试">代码高亮测试</h3>
 <figure class="highlight objective-c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="li]]>
     </summary>
+    
+      <category term="hexo" scheme="http://edison1105.github.io/tags/hexo/"/>
     
   </entry>
   
